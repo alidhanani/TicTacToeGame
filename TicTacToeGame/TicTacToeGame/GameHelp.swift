@@ -83,4 +83,38 @@ class GameHelp {
         presentMove = firstMove
     }
     
+    func compareValues(_ button: UIButton, _ symbol: String) -> Bool
+    {
+        return button.title(for: .normal) == symbol
+    }
+    
+    func checkWin(_ boardButton :[UIButton],value :String) -> Bool
+    {
+        // Horizontal
+        for i in [0,3,6] {
+            if compareValues(boardButton[i], value) && compareValues(boardButton[i+1], value) && compareValues(boardButton[i+2], value)
+            {
+                return true
+            }
+        }
+        
+        // Vertical
+        for i in [0,1,2] {
+            if compareValues(boardButton[i], value) && compareValues(boardButton[i+3], value) && compareValues(boardButton[i+6], value)
+            {
+                return true
+            }
+        }
+
+        // Diagonal
+        for i in [0,2] {
+            if compareValues(boardButton[i], value) && compareValues(boardButton[i+4], value) && compareValues(boardButton[i+(8-(i*2))], value)
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
 }

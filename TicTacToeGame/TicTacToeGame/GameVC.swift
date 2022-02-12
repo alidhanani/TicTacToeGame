@@ -186,6 +186,27 @@ class GameVC: UIViewController {
             GameHelp.shared.insertSymbols(sender) { lblText in
                 self.lblShow.text = lblText
             }
+            
+            if GameHelp.shared.checkWin(boardButton, value: GameHelp.shared.CROSS)
+            {
+                cross += 1
+                TicTacAlert.shared.finalResultAlert(Title: "Crosses Win!", Cross: String(zero), Zero: String(cross), CurrentView: self) {
+                    GameHelp.shared.resetGame(Board: self.boardButton) { lblText in
+                        self.lblShow.text = lblText
+                    }
+                }
+            }
+            
+            if GameHelp.shared.checkWin(boardButton, value: GameHelp.shared.ZERO)
+            {
+                zero += 1
+                TicTacAlert.shared.finalResultAlert(Title: "Zero Win!", Cross: String(cross), Zero: String(cross), CurrentView: self) {
+                    GameHelp.shared.resetGame(Board: self.boardButton) { lblText in
+                        self.lblShow.text = lblText
+                    }
+                }
+            }
+            
         
             if(GameHelp.shared.gameDraw(Board: boardButton))
             {
