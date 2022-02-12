@@ -183,7 +183,16 @@ class GameVC: UIViewController {
 
     @objc func boardBtnTapAction(_ sender: UIButton)
         {
-            // To Do Board Button Action
+            GameHelp.shared.insertSymbols(sender) { lblText in
+                self.lblShow.text = lblText
+            }
+        
+            if(GameHelp.shared.gameDraw(Board: boardButton))
+            {
+                TicTacAlert.shared.finalResultAlert(Title: "Draw!", Cross: String(zero), Zero: String(cross), CurrentView: self) {
+                    // To reset game
+                }
+            }
         }
         
 
