@@ -16,6 +16,7 @@
 		8C501B4727B7F9FB00BD9C90 /* TicTacToeGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C501B4627B7F9FB00BD9C90 /* TicTacToeGameUITests.swift */; };
 		8C501B4927B7F9FB00BD9C90 /* TicTacToeGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C501B4827B7F9FB00BD9C90 /* TicTacToeGameUITestsLaunchTests.swift */; };
 		8C501B5627B7FD2C00BD9C90 /* GameTurns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C501B5527B7FD2C00BD9C90 /* GameTurns.swift */; };
+		8C501B5827B7FD8500BD9C90 /* TicTacAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C501B5727B7FD8500BD9C90 /* TicTacAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8C501B4627B7F9FB00BD9C90 /* TicTacToeGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeGameUITests.swift; sourceTree = "<group>"; };
 		8C501B4827B7F9FB00BD9C90 /* TicTacToeGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8C501B5527B7FD2C00BD9C90 /* GameTurns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTurns.swift; sourceTree = "<group>"; };
+		8C501B5727B7FD8500BD9C90 /* TicTacAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				8C501B2E27B7F9FB00BD9C90 /* Assets.xcassets */,
 				8C501B3027B7F9FB00BD9C90 /* LaunchScreen.storyboard */,
 				8C501B3327B7F9FB00BD9C90 /* Info.plist */,
+				8C501B5727B7FD8500BD9C90 /* TicTacAlert.swift */,
 			);
 			path = TicTacToeGame;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C501B5627B7FD2C00BD9C90 /* GameTurns.swift in Sources */,
+				8C501B5827B7FD8500BD9C90 /* TicTacAlert.swift in Sources */,
 				8C501B2A27B7F9FA00BD9C90 /* GameVC.swift in Sources */,
 				8C501B2627B7F9FA00BD9C90 /* AppDelegate.swift in Sources */,
 				8C501B2827B7F9FA00BD9C90 /* SceneDelegate.swift in Sources */,
