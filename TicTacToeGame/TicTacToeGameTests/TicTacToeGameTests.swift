@@ -10,27 +10,103 @@ import XCTest
 
 class TicTacToeGameTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+    func testFirstMove() throws {
+        XCTAssertEqual(GameHelp.shared.firstMove, GameTurns.Cross)
+        
+    }
+    
+    func testCompareValueX() throws {
+        // all Button from 1 to 9 on the board
+        let boardButton: UIButton = {
+            let btn = UIButton(type: .system)
+            btn.frame = CGRect(x: 0, y: 0, width: 121, height: 121)
+            btn.backgroundColor = .white
+            btn.setTitle("X", for: .normal)
+            btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+            return btn
+        }()
+        XCTAssertEqual(GameHelp.shared.compareValues(boardButton, "X"), true)
+        
+    }
+    
+    func testCompareValueO() throws {
+        // all Button from 1 to 9 on the board
+        let boardButton: UIButton = {
+            let btn = UIButton(type: .system)
+            btn.frame = CGRect(x: 0, y: 0, width: 121, height: 121)
+            btn.backgroundColor = .white
+            btn.setTitle("O", for: .normal)
+            btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+            return btn
+        }()
+        XCTAssertEqual(GameHelp.shared.compareValues(boardButton, "O"), true)
+        
+    }
+    
+    func testCompareDiffernet() throws {
+        // all Button from 1 to 9 on the board
+        let boardButton: UIButton = {
+            let btn = UIButton(type: .system)
+            btn.frame = CGRect(x: 0, y: 0, width: 121, height: 121)
+            btn.backgroundColor = .white
+            btn.setTitle("X", for: .normal)
+            btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+            return btn
+        }()
+        XCTAssertEqual(GameHelp.shared.compareValues(boardButton, "O"), false)
+        
+    }
+    
+    func testGameDraw() throws {
+        // all Button from 1 to 9 on the board
+        let boardButton: [UIButton] = {
+            var btns: [UIButton] = []
+            // creation of 9 buttons that will be set to X and O
+            for i in 0..<9 {
+                let btn = UIButton(type: .system)
+                btn.frame = CGRect(x: 0, y: 0, width: 121, height: 121)
+                btn.backgroundColor = .white
+                btn.setTitle("nil", for: .normal)
+                btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+                btns.append(btn)
+            }
+            return btns
+        }()
+        boardButton[0].setTitle("X", for: .normal)
+        boardButton[1].setTitle("X", for: .normal)
+        boardButton[2].setTitle("O", for: .normal)
+        boardButton[3].setTitle("O", for: .normal)
+        boardButton[4].setTitle("O", for: .normal)
+        boardButton[5].setTitle("X", for: .normal)
+        boardButton[6].setTitle("X", for: .normal)
+        boardButton[7].setTitle("O", for: .normal)
+        boardButton[8].setTitle("X", for: .normal)
+        XCTAssertEqual(GameHelp.shared.gameDraw(Board: boardButton), true)
+        
+    }
+    
+    func testCheckVictoryForX() throws {
+        // all Button from 1 to 9 on the board
+        let boardButton: [UIButton] = {
+            var btns: [UIButton] = []
+            // creation of 9 buttons that will be set to X and O
+            for i in 0..<9 {
+                let btn = UIButton(type: .system)
+                btn.frame = CGRect(x: 0, y: 0, width: 121, height: 121)
+                btn.backgroundColor = .white
+                btn.setTitle("nil", for: .normal)
+                btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+                btns.append(btn)
+            }
+            return btns
+        }()
+        boardButton[0].setTitle("X", for: .normal)
+        boardButton[1].setTitle("X", for: .normal)
+        boardButton[2].setTitle("X", for: .normal)
+        XCTAssertEqual(GameHelp.shared.checkWin(boardButton, value: "X"), true)
+        XCTAssertEqual(GameHelp.shared.checkWin(boardButton, value: "O"), false)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 
 }
