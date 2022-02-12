@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  TicTacToeGame
 //
-//  Created by NextAuth on 12/02/2022.
+//  Created by Ali Dhanani on 12/02/2022.
 //
 
 import UIKit
