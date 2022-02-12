@@ -190,7 +190,10 @@ class GameVC: UIViewController {
             if(GameHelp.shared.gameDraw(Board: boardButton))
             {
                 TicTacAlert.shared.finalResultAlert(Title: "Draw!", Cross: String(zero), Zero: String(cross), CurrentView: self) {
-                    // To reset game
+                    GameHelp.shared.resetGame(Board: self.boardButton) { lblText in
+                        // Show on screen the current move
+                        self.lblShow.text = lblText
+                    }
                 }
             }
         }

@@ -59,4 +59,28 @@ class GameHelp {
         }
     }
     
+    // Board Reset
+    func resetGame(Board board: [UIButton], closure: @escaping ((String)->Void))
+    {
+        // Rest Symbols of all the button back to nil
+        for button in board
+        {
+            button.setTitle(nil, for: .normal)
+            button.isEnabled = true
+        }
+        
+        // Swapping of First Move From Cross to Zero and viceversa
+        if firstMove == GameTurns.Zero
+        {
+            firstMove = GameTurns.Cross
+            closure(CROSS)
+        }
+        else if firstMove == GameTurns.Cross
+        {
+            firstMove = GameTurns.Zero
+            closure(ZERO)
+        }
+        presentMove = firstMove
+    }
+    
 }
